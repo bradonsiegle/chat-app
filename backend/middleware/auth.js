@@ -20,4 +20,7 @@ const checkToken = (req, res, next) => {
 	} catch (err) {
 		return res.status(401).json({ message: 'Invalid token' });
 	}
+	return next();
 };
+
+module.exports = checkToken;
