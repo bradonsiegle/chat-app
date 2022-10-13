@@ -17,7 +17,7 @@ export const validateRegisterForm = ({
 };
 
 const validateUsername = (username) => {
-	return username.length >= 3 && username.length <= 16;
+	return String(username).length >= 6 && String(username).length <= 16;
 };
 
 const validateEmail = (email) => {
