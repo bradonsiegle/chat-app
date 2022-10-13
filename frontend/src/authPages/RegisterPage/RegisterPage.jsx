@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Typography } from '@mui/material';
 import { AuthBox } from '../../shared/components/AuthBox';
 import { RegisterPageInputs } from './RegisterPageInputs';
+import { RegisterPageFooter } from './RegisterPageFooter';
 
 export const RegisterPage = () => {
 	const [email, setEmail] = useState('');
