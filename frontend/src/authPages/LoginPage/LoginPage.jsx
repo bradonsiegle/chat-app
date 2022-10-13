@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { AuthBox } from '../../shared/components/AuthBox';
-import { LoginPageHeader } from './LoginPageHeader';
-import { LoginPageInputs } from './LoginPageInputs';
+import { LoginPageHeader, LoginPageInputs, LoginPageFooter } from './index.js';
 
 export const LoginPage = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [isFormValid, setIsFormValid] = useState(false);
+
+	const handleLogin = () => {
+		console.log('Login');
+	};
 
 	return (
 		<AuthBox>
@@ -16,6 +20,7 @@ export const LoginPage = () => {
 				password={password}
 				setPassword={setPassword}
 			/>
+			<LoginPageFooter isFormValid={isFormValid} handleLogin={handleLogin} />
 		</AuthBox>
 	);
 };
