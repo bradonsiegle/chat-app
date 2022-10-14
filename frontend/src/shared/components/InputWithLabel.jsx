@@ -16,13 +16,18 @@ const Label = styled('p')({
 
 const Input = styled('input')({
 	flexGrow: 1,
-	height: '3rem',
-	border: '1px solid black',
+	height: '2.8rem',
+	border: '1px solid #202225',
+	borderRadius: '0.2rem',
 	color: '#dcddde',
-	background: '#35393f',
+	background: '#202225',
 	margin: 0,
 	fontSize: '1rem',
 	padding: '0 0.5rem',
+	':focus': {
+		outline: 'none',
+		border: '1px solid #7289da',
+	},
 });
 
 export const InputWithLabel = (props) => {
