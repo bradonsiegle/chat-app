@@ -1,7 +1,7 @@
-import alertActions from '../actions/alertActions';
+import { alertActions } from '../actions/alertActions';
 
 const initialState = {
-	showAlert: false,
+	open: false,
 	message: '',
 };
 
@@ -10,12 +10,12 @@ const reducer = (state = initialState, action) => {
 	switch (type) {
 		case alertActions.SHOW_ALERT:
 			return {
-				showAlert: true,
+				open: true,
 				message: message,
 			};
 		case alertActions.HIDE_ALERT:
 			return {
-				showAlert: false,
+				open: false,
 				message: '',
 			};
 		default:
