@@ -2,29 +2,36 @@ import { CustomPrimaryButton, RedirectInfo } from '../../shared/components';
 import { useNavigate } from 'react-router-dom';
 import { Tooltip } from '@mui/material';
 
-const getFormMessage = (isFormValid) => {
+const getFormMessage = (isFormValid, formError) => {
 	if (isFormValid) {
-		return 'Register';
+		return 'Success!';
 	} else {
-		return 'Enter correct email address and password';
+		return formError;
 	}
 };
 
-export const RegisterPageFooter = ({ handleRegister, isFormValid }) => {
+export const RegisterPageFooter = ({
+	handleRegister,
+	isFormValid,
+	formError,
+}) => {
 	const navigate = useNavigate();
 
 	return (
 		<>
 			<Tooltip
 				title={
-					<h3 style={{ fontSize: '0.8rem' }}>{getFormMessage(isFormValid)}</h3>
+					<h3 style={{ fontSize: '0.8rem' }}>
+						{getFormMessage(isFormValid, formError)}
+					</h3>
 				}
+				enterTouchDelay={0}
+				leaveTouchDelay={5000}
 			>
 				<div>
 					<CustomPrimaryButton
 						label='Register'
 						additionalStyles={{ marginTop: '2rem' }}
-						disabled={!isFormValid}
 						onClick={handleRegister}
 					/>
 				</div>
