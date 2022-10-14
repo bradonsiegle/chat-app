@@ -40,7 +40,7 @@ export const RegisterPage = () => {
 		<AuthBox>
 			<Typography
 				variant='h5'
-				sx={{ color: '#fff', textAlign: 'center', marginBottom: '1rem' }}
+				sx={{ color: '#fff', textAlign: 'center', marginBottom: '0.5rem' }}
 			>
 				Create an account
 			</Typography>

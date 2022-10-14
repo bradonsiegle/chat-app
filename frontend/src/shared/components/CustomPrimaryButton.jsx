@@ -16,8 +16,9 @@ export const CustomPrimaryButton = ({
 				fontSize: '1rem',
 				fontWeight: 600,
 				width: '100%',
-				height: '3.5rem',
-				borderRadius: '0.5rem',
+				height: '3rem',
+				boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.2)',
+				borderRadius: '0.2rem',
 			}}
 			style={additionalStyles ? additionalStyles : {}}
 			disabled={disabled}
