@@ -15,8 +15,15 @@ export const AuthBox = (props) => {
 		<BoxWrapper>
 			<Box
 				sx={{
-					width: 700,
-					height: 400,
+					maxWidth: '400px',
+					width: {
+						xs: '80vw',
+						lg: '60%',
+					},
+					height: {
+						xs: '70vh',
+						lg: '60%',
+					},
 					bgcolor: '#36393f',
 					borderRadius: '5px',
 					boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.2)',
