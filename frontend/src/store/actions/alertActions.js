@@ -1,4 +1,4 @@
-const alertActions = {
+export const alertActions = {
 	SHOW_ALERT: 'ALERT.SHOW_ALERT',
 	HIDE_ALERT: 'ALERT.HIDE_ALERT',
 };
