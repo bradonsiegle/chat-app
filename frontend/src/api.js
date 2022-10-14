@@ -1,10 +1,20 @@
 import axios from 'axios';
+import { logout } from './shared/utils';
 
 const apiClient = axios.create({
 	baseURL: 'http://localhost:5002/api',
 	timeout: 1000,
 });
 
+apiClient.interceptors.request.use((config) => {
+	const userDetails = localStorage.getItem('user');
+	if (userDetails) {
+		const { token } = JSON.parse(userDetails);
+		config.headers.Authorization = `Bearer ${token}`;
+	}
+});
+
+//public routes
 export const login = async (data) => {
 	try {
 		return await apiClient.post('/auth/login', data);
@@ -24,5 +34,16 @@ export const register = async (data) => {
 			error: true,
 			exception,
 		};
+	}
+};
+
+//protected routes
+
+const checkStatus = (exception) => {
+	if (exception.response) {
+		const { status } = exception.response;
+		if (status === 401 || status === 403) {
+			logout();
+		}
 	}
 };
