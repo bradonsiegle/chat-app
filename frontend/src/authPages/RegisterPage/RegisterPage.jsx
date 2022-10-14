@@ -1,9 +1,8 @@
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
 import { Typography } from '@mui/material';
 import { AuthBox } from '../../shared/components/AuthBox';
-import { RegisterPageInputs } from './RegisterPageInputs';
-import { RegisterPageFooter } from './RegisterPageFooter';
+import { RegisterPageInputs, RegisterPageFooter } from './';
+import { validateRegisterForm } from '../../shared/utils/validators';
 
 export const RegisterPage = () => {
 	const [email, setEmail] = useState('');
@@ -11,6 +10,23 @@ export const RegisterPage = () => {
 	const [password, setPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
 	const [isFormValid, setIsFormValid] = useState(false);
+	const [error, setError] = useState('');
+
+	const handleRegister = () => {
+		const { isValid, error } = validateRegisterForm({
+			email,
+			username,
+			password,
+			confirmPassword,
+		});
+		setIsFormValid(isValid);
+		setError(error);
+		if (isValid) {
+			console.log(email, username, password, confirmPassword);
+		} else {
+			console.log(error);
+		}
+	};
 
 	return (
 		<AuthBox>
@@ -26,6 +42,11 @@ export const RegisterPage = () => {
 				setPassword={setPassword}
 				confirmPassword={confirmPassword}
 				setConfirmPassword={setConfirmPassword}
+			/>
+			<RegisterPageFooter
+				handleRegister={handleRegister}
+				isFormValid={isFormValid}
+				formError={error}
 			/>
 		</AuthBox>
 	);
