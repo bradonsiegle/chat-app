@@ -32,14 +32,14 @@ export const RegisterPageInputs = (props) => {
 				setValue={setPassword}
 				label='Password'
 				type='password'
-				placeholder='Enter password (minimum 6 characters)'
+				placeholder='Enter password'
 			/>
 			<InputWithLabel
 				value={confirmPassword}
 				setValue={setConfirmPassword}
 				label='Confirm password'
 				type='password'
-				placeholder='Confirm password (passwords must match)'
+				placeholder='Confirm password'
 			/>
 		</>
 	);
