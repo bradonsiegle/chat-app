@@ -18,28 +18,24 @@ export const RegisterPageInputs = (props) => {
 				setValue={setUsername}
 				label='Username'
 				type='text'
-				placeholder='Enter username'
 			/>
 			<InputWithLabel
 				value={email}
 				setValue={setEmail}
 				label='Email address'
 				type='email'
-				placeholder='Enter email address'
 			/>
 			<InputWithLabel
 				value={password}
 				setValue={setPassword}
 				label='Password'
 				type='password'
-				placeholder='Enter password'
 			/>
 			<InputWithLabel
 				value={confirmPassword}
 				setValue={setConfirmPassword}
 				label='Confirm password'
 				type='password'
-				placeholder='Confirm password'
 			/>
 		</>
 	);

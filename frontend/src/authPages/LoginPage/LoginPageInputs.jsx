@@ -10,14 +10,12 @@ export const LoginPageInputs = (props) => {
 				setValue={setEmail}
 				label='Email'
 				type='text'
-				placeholder='Enter your email address'
 			/>
 			<InputWithLabel
 				value={password}
 				setValue={setPassword}
 				label='Password'
 				type='password'
-				placeholder='Enter your password'
 			/>
 		</>
 	);
