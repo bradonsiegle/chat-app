@@ -1,15 +1,20 @@
-import authActions from '../actions/authActions.js';
+import { authActions } from '../actions/authActions';
 
-const initialState = {
-	userDetails: null,
-};
+const user = JSON.parse(localStorage.getItem('user'));
+
+const initialState = user
+	? { isLoggedIn: true, userDetails: user }
+	: { isLoggedIn: false, userDetails: null };
 
 const reducer = (state = initialState, action) => {
-	switch (action.type) {
+	const { type, payload } = action;
+
+	switch (type) {
 		case authActions.SET_USER_DETAILS:
 			return {
 				...state,
-				userDetails: action.payload,
+				isLoggedIn: true,
+				userDetails: payload,
 			};
 		default:
 			return state;
