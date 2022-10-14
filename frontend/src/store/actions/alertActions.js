@@ -1,6 +1,6 @@
 const alertActions = {
-	SHOW_ALERT: 'SHOW_ALERT',
-	HIDE_ALERT: 'HIDE_ALERT',
+	SHOW_ALERT: 'ALERT.SHOW_ALERT',
+	HIDE_ALERT: 'ALERT.HIDE_ALERT',
 };
 
 export const showAlert = (message) => {
