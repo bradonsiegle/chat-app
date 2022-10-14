@@ -39,7 +39,7 @@ export const RegisterPageFooter = ({
 			<RedirectInfo
 				text='Already have an account? '
 				redirectText='Sign in'
-				additionalStyles={{ marginTop: '0.5rem' }}
+				additionalStyles={{ marginTop: '1.2rem' }}
 				redirectHandler={() => navigate('/login')}
 			/>
 		</>
