@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Typography } from '@mui/material';
 import { AuthBox } from '../../shared/components/AuthBox';
 import { RegisterPageInputs, RegisterPageFooter } from './';
@@ -6,6 +6,7 @@ import { validateRegisterForm } from '../../shared/utils/validators';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { register } from '../../store/actions/authActions';
+import { showAlert } from '../../store/actions/alertActions';
 
 export const RegisterPage = () => {
 	const navigate = useNavigate();
@@ -31,7 +32,7 @@ export const RegisterPage = () => {
 			const userDetails = { email, username, password };
 			dispatch(register(userDetails, navigate));
 		} else {
-			console.log(error);
+			dispatch(showAlert(error));
 		}
 	};
 
@@ -53,11 +54,7 @@ export const RegisterPage = () => {
 				confirmPassword={confirmPassword}
 				setConfirmPassword={setConfirmPassword}
 			/>
-			<RegisterPageFooter
-				handleRegister={handleRegister}
-				isFormValid={isFormValid}
-				formError={error}
-			/>
+			<RegisterPageFooter handleRegister={handleRegister} />
 		</AuthBox>
 	);
 };
