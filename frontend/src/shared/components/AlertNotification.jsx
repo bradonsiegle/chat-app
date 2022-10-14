@@ -1,17 +1,33 @@
 import Alert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
+import { useDispatch, useSelector } from 'react-redux';
+import { hideAlert } from '../../store/actions/alertActions';
 
-export const AlertNotification = (props) => {
+export const AlertNotification = () => {
+	const dispatch = useDispatch();
+	const { alert } = useSelector((state) => state);
+	const { open, message } = alert;
+
 	return (
 		<Snackbar
 			anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-			open
-			onClose={() => {}}
+			open={open}
+			onClose={() => {
+				dispatch(hideAlert());
+			}}
 			autoHideDuration={6000}
 			sx={{ marginTop: '1.4rem' }}
 		>
-			<Alert severity={props.severity} sx={{ width: '100%' }}>
-				{props.message}
+			<Alert
+				severity='error'
+				sx={{
+					width: {
+						xs: '80vw',
+						lg: '25vw',
+					},
+				}}
+			>
+				{message}
 			</Alert>
 		</Snackbar>
 	);
