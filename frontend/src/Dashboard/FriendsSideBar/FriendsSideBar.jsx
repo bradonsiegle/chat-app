@@ -1,6 +1,10 @@
 import { styled } from '@mui/system';
-import { AddFriendButton } from './AddFriendButton';
-import { FriendsTitle } from './FriendsTitle';
+import {
+	AddFriendButton,
+	FriendsTitle,
+	FriendsList,
+	PendingInvitationsList,
+} from './index';
 
 const MainContainer = styled('div')({
 	width: '13rem',
