@@ -1,4 +1,5 @@
 import { styled } from '@mui/system';
+import { AddFriendButton } from './AddFriendButton';
 
 const MainContainer = styled('div')({
 	width: '13rem',
@@ -10,5 +11,9 @@ const MainContainer = styled('div')({
 });
 
 export const FriendsSideBar = () => {
-	return <MainContainer></MainContainer>;
+	return (
+		<MainContainer>
+			<AddFriendButton />
+		</MainContainer>
+	);
 };
