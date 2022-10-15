@@ -8,7 +8,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Typography from '@mui/material/Typography';
 
 import { validateEmail } from '../../shared/utils/validators';
-import { InputWithLabel } from '../../shared/components';
+import { CustomPrimaryButton, InputWithLabel } from '../../shared/components';
 
 export const AddFriendDialog = ({
 	isDialogOpen,
@@ -76,6 +76,19 @@ export const AddFriendDialog = ({
 						type='text'
 					/>
 				</DialogContent>
+				<DialogActions>
+					<CustomPrimaryButton
+						onClick={handleSendInvitation}
+						disabled={!isFormValid}
+						label='Send'
+						additionalStyles={{
+							width: '90%',
+							margin: 'auto',
+							color: 'white',
+							marginBottom: '1rem',
+						}}
+					/>
+				</DialogActions>
 			</Dialog>
 		</div>
 	);
