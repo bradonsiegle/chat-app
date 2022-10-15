@@ -3,6 +3,7 @@ import { FriendsList } from './FriendsList/FriendsList';
 import { FriendsTitle } from './FriendsTitle';
 import { PendingInvitationsList } from './PendingInvitationsList/PendingInvitationsList';
 import { AddFriendDialog } from './AddFriendDialog';
+import { FriendsListItem } from './FriendsList/FriendsListItem';
 
 export {
 	PendingInvitationsList,
@@ -10,4 +11,5 @@ export {
 	AddFriendButton,
 	FriendsList,
 	AddFriendDialog,
+	FriendsListItem,
 };
