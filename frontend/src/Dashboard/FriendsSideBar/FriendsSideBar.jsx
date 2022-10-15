@@ -1,5 +1,6 @@
 import { styled } from '@mui/system';
 import { AddFriendButton } from './AddFriendButton';
+import { FriendsTitle } from './FriendsTitle';
 
 const MainContainer = styled('div')({
 	width: '13rem',
@@ -14,6 +15,10 @@ export const FriendsSideBar = () => {
 	return (
 		<MainContainer>
 			<AddFriendButton />
+			<FriendsTitle title='Private Messages' />
+			<FriendsList />
+			<FriendsTitle title='Invitations' />
+			<PendingInvitationsList />
 		</MainContainer>
 	);
 };
