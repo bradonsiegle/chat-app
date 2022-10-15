@@ -1,4 +1,5 @@
 import { styled } from '@mui/system';
+import { MainPageButton } from './MainPageButton';
 
 const MainContainer = styled('div')({
 	width: '4rem',
@@ -10,5 +11,9 @@ const MainContainer = styled('div')({
 });
 
 export const SideBar = () => {
-	return <MainContainer></MainContainer>;
+	return (
+		<MainContainer>
+			<MainPageButton />
+		</MainContainer>
+	);
 };
