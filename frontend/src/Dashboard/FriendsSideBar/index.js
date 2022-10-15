@@ -4,6 +4,7 @@ import { FriendsTitle } from './FriendsTitle';
 import { PendingInvitationsList } from './PendingInvitationsList/PendingInvitationsList';
 import { AddFriendDialog } from './AddFriendDialog';
 import { FriendsListItem } from './FriendsList/FriendsListItem';
+import { OnlineIndicator } from './FriendsList/OnlineIndicator';
 
 export {
 	PendingInvitationsList,
@@ -12,4 +13,5 @@ export {
 	FriendsList,
 	AddFriendDialog,
 	FriendsListItem,
+	OnlineIndicator,
 };
