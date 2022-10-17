@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { styled } from '@mui/system';
 import { AppBar, FriendsSideBar, Messenger, SideBar } from './';
 import { connectWithSocketServer } from '../realtimeCommunication/socketConnection';
@@ -9,7 +10,9 @@ const Wrapper = styled('div')({
 });
 
 export const Dashboard = () => {
-	connectWithSocketServer();
+	useEffect(() => {
+		connectWithSocketServer();
+	}, []);
 
 	return (
 		<Wrapper>
