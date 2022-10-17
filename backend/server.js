@@ -4,6 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+const socketServer = require('./socketServer');
 const authRoutes = require('./routes/authRoutes.js');
 
 const PORT = process.env.PORT || process.env.API_PORT;
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 
 const server = http.createServer(app);
+socketServer.registerSocketServer(server);
 
 mongoose
 	.connect(process.env.MONGODB_URI, {})
