@@ -11,6 +11,8 @@ export const ProtectedRoute = ({ children }) => {
 	useEffect(() => {
 		if (userDetails) {
 			dispatch(setUserDetails(userDetails));
+		} else {
+			localStorage.removeItem('user');
 		}
 	}, [userDetails, dispatch]);
 
