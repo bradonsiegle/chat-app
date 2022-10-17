@@ -1,5 +1,6 @@
 import { styled } from '@mui/system';
 import { AppBar, FriendsSideBar, Messenger, SideBar } from './';
+import { connectWithSocketServer } from '../realtimeCommunication/socketConnection';
 
 const Wrapper = styled('div')({
 	width: '100%',
@@ -8,6 +9,8 @@ const Wrapper = styled('div')({
 });
 
 export const Dashboard = () => {
+	connectWithSocketServer();
+
 	return (
 		<Wrapper>
 			<SideBar />
