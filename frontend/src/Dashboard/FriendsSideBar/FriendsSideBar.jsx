@@ -21,7 +21,7 @@ export const FriendsSideBar = () => {
 			<AddFriendButton />
 			<FriendsTitle title='Private Messages' />
 			<FriendsList />
-			<FriendsTitle title='Invitations' />
+			<FriendsTitle title='Pending Requests' />
 			<PendingInvitationsList />
 		</MainContainer>
 	);
