@@ -9,16 +9,27 @@ import './App.css';
 import { RegisterPage, LoginPage } from './authPages';
 import { Dashboard } from './Dashboard';
 import { AlertNotification } from './shared/components';
+import { ProtectedRoute } from './shared/components';
 
 function App() {
 	return (
 		<>
 			<Router>
 				<Routes>
+					//public routes
+					<Route path='/' element={<Navigate to='/login' />} />
 					<Route exact path='/login' element={<LoginPage />} />
 					<Route exact path='/register' element={<RegisterPage />} />
-					<Route exact path='/dashboard' element={<Dashboard />} />
-					<Route path='/' element={<Navigate to='/login' />} />
+					//protected routes
+					<Route
+						exact
+						path='/dashboard'
+						element={
+							<ProtectedRoute>
+								<Dashboard />
+							</ProtectedRoute>
+						}
+					/>
 				</Routes>
 			</Router>
 			<AlertNotification />
