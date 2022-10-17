@@ -11,7 +11,10 @@ const Wrapper = styled('div')({
 
 export const Dashboard = () => {
 	useEffect(() => {
-		connectWithSocketServer();
+		const userDetails = JSON.parse(localStorage.getItem('user'));
+		if (userDetails) {
+			connectWithSocketServer(userDetails);
+		}
 	}, []);
 
 	return (
