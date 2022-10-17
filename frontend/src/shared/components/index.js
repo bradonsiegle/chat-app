@@ -4,6 +4,7 @@ import { CustomPrimaryButton } from './CustomPrimaryButton';
 import { RedirectInfo } from './RedirectInfo';
 import { AlertNotification } from './AlertNotification';
 import { Avatar } from './Avatar';
+import { ProtectedRoute } from './ProtectedRoute';
 
 export {
 	AuthBox,
@@ -12,4 +13,5 @@ export {
 	RedirectInfo,
 	AlertNotification,
 	Avatar,
+	ProtectedRoute,
 };
