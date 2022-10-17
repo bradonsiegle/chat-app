@@ -1,15 +1,18 @@
 import { useDispatch } from 'react-redux';
-import { authActions } from '../../store/actions/authActions';
+import { useEffect } from 'react';
+import { setUserDetails } from '../../store/actions/authActions';
 import { Navigate } from 'react-router-dom';
 
 export const ProtectedRoute = ({ children }) => {
 	const dispatch = useDispatch();
+	const userDetails = JSON.parse(localStorage.getItem('user'));
 
-	const user = JSON.parse(localStorage.getItem('user'));
+	//check for user details in local storage
+	useEffect(() => {
+		if (userDetails) {
+			dispatch(setUserDetails(userDetails));
+		}
+	}, [userDetails, dispatch]);
 
-	if (user) {
-		dispatch(authActions.SET_USER_DETAILS(user));
-	}
-
-	return user ? children : <Navigate to='/login' replace />;
+	return userDetails ? children : <Navigate to='/login' replace />;
 };
