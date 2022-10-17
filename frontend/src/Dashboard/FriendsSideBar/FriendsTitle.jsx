@@ -7,7 +7,8 @@ export const FriendsTitle = ({ title }) => {
 				textTransform: 'uppercase',
 				color: '#8E9297',
 				fontSize: '0.8rem',
-				marginTop: '0.8rem',
+				marginTop: '2rem',
+				marginBottom: '0.4rem',
 			}}
 		>
 			{title}
