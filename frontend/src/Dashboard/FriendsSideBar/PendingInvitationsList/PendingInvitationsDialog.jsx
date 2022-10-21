@@ -57,17 +57,15 @@ export const PendingInvitationsDialog = ({
 						}}
 					>
 						<Avatar username={username} />
-						<DialogContentText>
-							<Typography
-								sx={{
-									color: 'white',
-									marginLeft: '0.5rem',
-									marginRight: '1rem',
-									p: 1,
-								}}
-							>
-								{username} ( {email} )
-							</Typography>
+						<DialogContentText
+							sx={{
+								color: 'white',
+								marginLeft: '0.5rem',
+								marginRight: '1rem',
+								p: 1,
+							}}
+						>
+							{username} ( {email} )
 						</DialogContentText>
 						<DialogActions
 							sx={{
