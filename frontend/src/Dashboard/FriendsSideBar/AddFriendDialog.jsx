@@ -5,21 +5,24 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import Typography from '@mui/material/Typography';
 
 import { validateEmail } from '../../shared/utils/validators';
 import { CustomPrimaryButton, InputWithLabel } from '../../shared/components';
 
-export const AddFriendDialog = ({
-	isDialogOpen,
-	closeDialogHandler,
-	sendFriendInvitation = () => {},
-}) => {
+import { useDispatch } from 'react-redux';
+import { sendFriendInvitation } from './../../store/actions/friendsActions';
+
+export const AddFriendDialog = ({ isDialogOpen, closeDialogHandler }) => {
+	const dispatch = useDispatch();
 	const [email, setEmail] = useState('');
 	const [isFormValid, setIsFormValid] = useState(false);
 
 	const handleSendInvitation = () => {
-		//send friend request to server
+		dispatch(
+			sendFriendInvitation({
+				email,
+			})
+		);
 	};
 
 	const handleCloseDialog = () => {
@@ -54,19 +57,17 @@ export const AddFriendDialog = ({
 						color: 'white',
 					}}
 				>
-					<Typography>ADD FRIEND</Typography>
+					ADD FRIEND
 				</DialogTitle>
 				<DialogContent>
-					<DialogContentText>
-						<Typography
-							sx={{
-								color: 'white',
-								m: 0,
-								p: 1,
-							}}
-						>
-							Enter the email address of the person you want to invite.
-						</Typography>
+					<DialogContentText
+						sx={{
+							color: 'white',
+							m: 0,
+							p: 1,
+						}}
+					>
+						Enter the email address of the person you want to invite.
 					</DialogContentText>
 					<InputWithLabel
 						label='Email'
