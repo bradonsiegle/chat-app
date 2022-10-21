@@ -10,10 +10,9 @@ export const friendsActions = {
 export const sendFriendInvitation = (data, closeDialogHandler) => {
 	return async (dispatch) => {
 		const response = await api.sendFriendInvitation(data);
-		console.log(response);
 
 		if (response.error) {
-			dispatch(showAlert(response?.exception?.response?.data));
+			dispatch(showAlert(response.exception.response.data?.message), 'error');
 		} else {
 			dispatch(showAlert('Invitation sent successfully', 'success'));
 			closeDialogHandler();
