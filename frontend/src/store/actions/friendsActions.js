@@ -15,7 +15,7 @@ export const sendFriendInvitation = (data, closeDialogHandler) => {
 		if (response.error) {
 			dispatch(showAlert(response?.exception?.response?.data));
 		} else {
-			dispatch(showAlert('Invitation sent successfully'));
+			dispatch(showAlert('Invitation sent successfully', 'success'));
 			closeDialogHandler();
 		}
 	};

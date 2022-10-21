@@ -6,12 +6,13 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-	const { type, message } = action;
+	const { type, message, severity } = action;
 	switch (type) {
 		case alertActions.SHOW_ALERT:
 			return {
 				open: true,
-				message: message,
+				message,
+				severity,
 			};
 		case alertActions.HIDE_ALERT:
 			return {

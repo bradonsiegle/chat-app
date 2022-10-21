@@ -6,7 +6,7 @@ import { hideAlert } from '../../store/actions/alertActions';
 export const AlertNotification = () => {
 	const dispatch = useDispatch();
 	const { alert } = useSelector((state) => state);
-	const { open, message } = alert;
+	const { open, message, severity } = alert;
 
 	return (
 		<Snackbar
@@ -19,7 +19,7 @@ export const AlertNotification = () => {
 			sx={{ marginTop: '1.4rem' }}
 		>
 			<Alert
-				severity='error'
+				severity={severity || 'error'}
 				sx={{
 					width: {
 						xs: '80vw',

@@ -3,10 +3,11 @@ export const alertActions = {
 	HIDE_ALERT: 'ALERT.HIDE_ALERT',
 };
 
-export const showAlert = (message) => {
+export const showAlert = (message, severity) => {
 	return {
 		type: alertActions.SHOW_ALERT,
 		message,
+		severity,
 	};
 };
 
