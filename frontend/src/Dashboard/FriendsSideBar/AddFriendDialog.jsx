@@ -19,9 +19,12 @@ export const AddFriendDialog = ({ isDialogOpen, closeDialogHandler }) => {
 
 	const handleSendInvitation = () => {
 		dispatch(
-			sendFriendInvitation({
-				email,
-			})
+			sendFriendInvitation(
+				{
+					targetEmail: email,
+				},
+				handleCloseDialog
+			)
 		);
 	};
 
