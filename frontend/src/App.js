@@ -16,11 +16,9 @@ function App() {
 		<>
 			<Router>
 				<Routes>
-					//public routes
 					<Route path='/' element={<Navigate to='/login' />} />
 					<Route exact path='/login' element={<LoginPage />} />
 					<Route exact path='/register' element={<RegisterPage />} />
-					//protected routes
 					<Route
 						exact
 						path='/dashboard'
