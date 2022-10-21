@@ -19,3 +19,10 @@ export const sendFriendInvitation = (data, closeDialogHandler) => {
 		}
 	};
 };
+
+export const setPendingFriendInvitations = (pendingInvitations) => {
+	return {
+		type: friendsActions.SET_PENDING_FRIENDS_INVITATIONS,
+		payload: pendingInvitations,
+	};
+};
