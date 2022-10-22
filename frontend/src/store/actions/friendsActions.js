@@ -26,3 +26,27 @@ export const setPendingFriendInvitations = (pendingInvitations) => {
 		payload: pendingInvitations,
 	};
 };
+
+export const acceptFriendInvitation = (data) => {
+	return async (dispatch) => {
+		const response = await api.acceptFriendInvitation(data);
+
+		if (response.error) {
+			dispatch(showAlert(response.exception.response.data?.message), 'error');
+		} else {
+			dispatch(showAlert('Invitation accepted successfully', 'success'));
+		}
+	};
+};
+
+export const rejectFriendInvitation = (data) => {
+	return async (dispatch) => {
+		const response = await api.rejectFriendInvitation(data);
+
+		if (response.error) {
+			dispatch(showAlert(response.exception.response.data?.message), 'error');
+		} else {
+			dispatch(showAlert('Invitation rejected successfully', 'success'));
+		}
+	};
+};
