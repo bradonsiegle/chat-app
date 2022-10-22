@@ -3,24 +3,21 @@ import Typography from '@mui/material/Typography';
 import { Avatar } from '../../../shared/components';
 import Button from '@mui/material/Button';
 import { PendingInvitationsDialog } from './PendingInvitationsDialog';
+import {
+	acceptFriendInvitation,
+	rejectFriendInvitation,
+} from '../../../store/actions/friendsActions';
+import { useDispatch } from 'react-redux';
 
-export const PendingInvitationsListItem = ({
-	id,
-	username,
-	email,
-	acceptFriendInvitation = () => {
-		console.log('acceptFriendInvitation');
-	},
-	rejectFriendInvitation = () => {
-		console.log('rejectFriendInvitation');
-	},
-}) => {
+export const PendingInvitationsListItem = ({ id, username, email }) => {
+	const dispatch = useDispatch();
+
 	const handleAcceptFriendInvitation = () => {
-		acceptFriendInvitation({ id });
+		dispatch(acceptFriendInvitation({ id }));
 	};
 
 	const handleRejectFriendInvitation = () => {
-		rejectFriendInvitation({ id });
+		dispatch(rejectFriendInvitation({ id }));
 	};
 
 	const handleOpenDialog = () => {
