@@ -13,20 +13,28 @@ export const InvitationDecisionButtons = ({
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',
-				gap: '1.6rem',
+				gap: '1rem',
 			}}
 		>
 			<IconButton
-				style={{ color: 'green', padding: '0' }}
+				style={{ color: 'green', padding: '0.8rem' }}
 				onClick={acceptFriendInvitation}
 			>
-				<CheckIcon />
+				<CheckIcon
+					sx={{
+						fontSize: '2rem',
+					}}
+				/>
 			</IconButton>
 			<IconButton
-				style={{ color: 'red', padding: '0' }}
+				style={{ color: 'red', padding: '0.8rem' }}
 				onClick={rejectFriendInvitation}
 			>
-				<CloseIcon />
+				<CloseIcon
+					sx={{
+						fontSize: '2rem',
+					}}
+				/>
 			</IconButton>
 		</Box>
 	);
