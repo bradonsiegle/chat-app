@@ -58,4 +58,4 @@ const updateFriends = async (userId) => {
 		console.log(error);
 	}
 };
-module.exports = { updateFriendsPendingInvitations };
+module.exports = { updateFriendsPendingInvitations, updateFriends };
