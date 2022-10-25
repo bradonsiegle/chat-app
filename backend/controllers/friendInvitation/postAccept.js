@@ -25,6 +25,10 @@ const postAccept = async (req, res) => {
 		//Delete the invitation
 		await FriendInvitation.findByIdAndDelete(id);
 
+		//Update the friends list of both the sender and the receiver
+		friendsUpdates.updateFriends(senderId.toString());
+		friendsUpdates.updateFriends(receiverId.toString());
+
 		//Update pending invitations
 		friendsUpdates.updateFriendsPendingInvitations(receiverId.toString());
 
