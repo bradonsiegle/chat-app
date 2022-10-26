@@ -5,7 +5,6 @@ import AlternateEmailTwoToneIcon from '@mui/icons-material/AlternateEmailTwoTone
 
 export const ChosenOptionLabel = () => {
 	const name = useSelector((state) => state.chat.chosenChatDetails?.name);
-	console.log(name);
 
 	return (
 		<>
