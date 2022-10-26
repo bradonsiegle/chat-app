@@ -1,4 +1,7 @@
 import { styled } from '@mui/system';
+import { useSelector } from 'react-redux';
+import { WelcomeMessage } from './WelcomeMessage';
+import { MessengerContent } from './MessengerContent';
 
 const MainContainer = styled('div')({
 	flexGrow: 1,
@@ -8,5 +11,17 @@ const MainContainer = styled('div')({
 });
 
 export const Messenger = () => {
-	return <MainContainer></MainContainer>;
+	const chosenChatDetails = useSelector(
+		(state) => state.chat.chosenChatDetails
+	);
+
+	return (
+		<MainContainer>
+			{chosenChatDetails ? (
+				<MessengerContent chosenChatDetails={chosenChatDetails} />
+			) : (
+				<WelcomeMessage />
+			)}
+		</MainContainer>
+	);
 };
