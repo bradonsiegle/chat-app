@@ -36,9 +36,16 @@ export const connectWithSocketServer = (userDetails) => {
 		const { onlineUsers } = data;
 		store.dispatch(setOnlineUsers(onlineUsers));
 	});
+
+	socket.on('direct-chat-history', (data) => {
+		console.log('direct-chat-history', data);
+	});
 };
 
 export const sendDirectMessage = (data) => {
-	console.log(data);
 	socket.emit('direct-message', data);
+};
+
+export const getDirectChatHistory = (data) => {
+	socket.emit('direct-chat-history', data);
 };
