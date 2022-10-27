@@ -2,6 +2,7 @@ const authSocket = require('./middleware/authSocket');
 const newConnectionHandler = require('./socketHandlers/newConnectionHandler');
 const disconnectHandler = require('./socketHandlers/disconnectHandler');
 const directMessageHandler = require('./socketHandlers/directMessageHandler');
+const directChatHistoryHandler = require('./socketHandlers/directChatHistoryHandler');
 
 const serverStore = require('./serverStore');
 
@@ -33,6 +34,10 @@ const registerSocketServer = (server) => {
 
 		socket.on('direct-message', (data) => {
 			directMessageHandler(socket, data);
+		});
+
+		socket.on('direct-chat-history', (data) => {
+			directChatHistoryHandler(socket, data);
 		});
 
 		socket.on('disconnect', () => {
